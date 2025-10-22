@@ -7,7 +7,6 @@ package tp1_manipnombreslnt_quiles;
 import java.util.Scanner;
 
 /**
- *
  * @author camsq
  */
 public class TP1_manipNombreslnt_Quiles {
@@ -21,11 +20,14 @@ public class TP1_manipNombreslnt_Quiles {
         System.out.println("Entrer le nombre :");  
         var1=sc.nextInt();
         int var2;
-        System.out.println("entrer un deuxieme nombre");
+        System.out.println("entrer un deuxieme nombre :");
         var2=sc.nextInt();
         System.out.println(var1+var2);
         System.out.println(var1/var2);
         System.out.println(var1%var2);
+        
+        
+        
     }
     
 }
