@@ -48,8 +48,10 @@ public class TP1_convertisseur_Quiles {
     public static void main(String[] args) {
         double var;
         Scanner sc = new Scanner(System.in); 
-        System.out.println("BO=onjour, entrer un deuxieme nombre");
+        System.out.println("Bonjour, saisez une valeur ");
         var=sc.nextDouble();
+        System.out.println("Saisissez la conversion que vous souhaiter effectuer :"+"\n1) De Celcius vers Kelvin"+"\n2) De Kelvin vers Celcius"+"\n3) De Farenheit Vers Celcius"+"\n4) De Celcius Vers Farenheit"+"5) De Kelvin Vers Farenheit"+"\n6) De Farenheit Vers Kelvin");
+        int conv=sc.nextInt()
         System.out.println(CelciusVersKelvin(var));
 
     }
