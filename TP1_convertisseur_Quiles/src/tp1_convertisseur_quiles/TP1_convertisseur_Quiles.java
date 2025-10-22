@@ -50,9 +50,29 @@ public class TP1_convertisseur_Quiles {
         Scanner sc = new Scanner(System.in); 
         System.out.println("Bonjour, saisez une valeur ");
         var=sc.nextDouble();
-        System.out.println("Saisissez la conversion que vous souhaiter effectuer :"+"\n1) De Celcius vers Kelvin"+"\n2) De Kelvin vers Celcius"+"\n3) De Farenheit Vers Celcius"+"\n4) De Celcius Vers Farenheit"+"5) De Kelvin Vers Farenheit"+"\n6) De Farenheit Vers Kelvin");
-        int conv=sc.nextInt()
-        System.out.println(CelciusVersKelvin(var));
+        System.out.println("Saisissez la conversion que vous souhaiter effectuer :"+"\n1) De Celcius vers Kelvin"+"\n2) De Kelvin vers Celcius"+"\n3) De Farenheit Vers Celcius"+"\n4) De Celcius Vers Farenheit"+"\n5) De Kelvin Vers Farenheit"+"\n6) De Farenheit Vers Kelvin");
+        int conv=sc.nextInt();
+        if (conv==1){
+            System.out.println(CelciusVersKelvin(var));
+        }
+        else if(conv==2){
+            System.out.println(KelvinVersCelcius(var));
+        }        
+        else if (conv==3){
+            System.out.println(FarenheitVersCelcius(var));
+        }
+        else if (conv==4){
+            System.out.println(CelciusVersFarenheit(var));
+        }
+        else if (conv==5){
+            System.out.println(KelvinVersFarenheit(var));
+        }
+        else if (conv==6){
+            System.out.println(FarenheitVersKelvin(var));
+        }
+        else {
+            System.out.println("C'est pas le bon nombre");
+        }
 
     }
     
