@@ -23,8 +23,16 @@ public class TP1_manipNombreslnt_Quiles {
         System.out.println("entrer un deuxieme nombre :");
         var2=sc.nextInt();
         System.out.println(var1+var2);
-        System.out.println(var1/var2);
-        System.out.println(var1%var2);
+        System.out.println( var1-var2);
+        System.out.println( var1*var2);
+        if (var2==0){
+            System.out.println("division impossible");
+        }
+        else {
+            System.out.println(var1/var2);
+            System.out.println(var1%var2);
+        }
+        
         
         
         
