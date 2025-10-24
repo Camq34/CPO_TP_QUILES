@@ -70,46 +70,67 @@ public static void main(String[] args) {
     else if (dif==3){
         System.out.println("Devine le nombre sachant que 1/4 les indices sont faux");
         System.out.println("Essaye...");
-    int nbr=sc.nextInt();
-    int comp=1;
-    while (n!=nbr) {
-    comp +=1;
-    if (n>nbr){
-        System.out.println("trop petit");
-        System.out.println("Essaye encore...");
-        nbr=sc.nextInt();
-    }  
-    else {
-        System.out.println("Trop grand ");
-        System.out.println("Essaye encore...");
-        nbr=sc.nextInt();
+        int nbr=sc.nextInt();
+        int comp=1;
+        while (n!=nbr) {
+        comp +=1;
+        if (n>nbr){ 
+            int CHC = generateurAleat.nextInt(4);
+            if (CHC<=3){
+                System.out.println("trop petit");
+            }
+            else{
+                System.out.println("trop grand");
+            }
+            System.out.println("Essaye encore...");
+            nbr=sc.nextInt();
+        }  
+        else {
+            int CHC = generateurAleat.nextInt(4);
+            if (CHC<=3){
+                System.out.println("trop grand");
+            }
+            else{
+                System.out.println("trop petit");
+            }
+            System.out.println("Essaye encore...");
+            nbr=sc.nextInt();
+        }
+        }
+        System.out.println("TROUVERRRR");
+        System.out.println("Tentative="+comp);
+        }
+    else if(dif==4 ){
+        System.out.println("Devine le nombre sachant que 1/2 les indices sont faux");
+        System.out.println("Essaye...");
+        int nbr=sc.nextInt();
+        int comp=1;
+        while (n!=nbr) {
+        comp +=1;
+        if (n>nbr){ 
+            int CHC = generateurAleat.nextInt(2);
+            if (CHC==1){
+                System.out.println("trop petit");
+            }
+            else{
+                System.out.println("trop grand");
+            }
+            System.out.println("Essaye encore...");
+            nbr=sc.nextInt();
+        }  
+        else {
+            int CHC = generateurAleat.nextInt(2);
+            if (CHC==1){
+                System.out.println("trop grand");
+            }
+            else{
+                System.out.println("trop petit");
+            }
+            System.out.println("Essaye encore...");
+            nbr=sc.nextInt();
+        }
+        }
+        System.out.println("TROUVERRRR");
+        System.out.println("Tentative="+comp);
+        }
     }
-    }
-    System.out.println("TROUVERRRR");
-    System.out.println("Tentative="+comp);
-    }
-        
-    }
-    
-    
-    System.out.println("Essaye...");
-    int nbr=sc.nextInt();
-    int comp=1;
-    while (n!=nbr) {
-    comp +=1;
-    if (n>nbr){
-        System.out.println("trop petit");
-        System.out.println("Essaye encore...");
-        nbr=sc.nextInt();
-    }  
-    else {
-        System.out.println("Trop grand ");
-        System.out.println("Essaye encore...");
-        nbr=sc.nextInt();
-    }
-    }
-    System.out.println("TROUVERRRR");
-    System.out.println("Tentative="+comp);
-    }
-    
-}
