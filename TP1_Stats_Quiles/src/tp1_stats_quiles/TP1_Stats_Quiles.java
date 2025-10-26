@@ -21,7 +21,7 @@ public class TP1_Stats_Quiles {
         Random generateurAleat = new Random();
 
         int[] tableau = new int[6];
-        System.out.println("Entre un nombre de lance de dé à simuler: ");
+        System.out.println("Entre un nombre de lance de de a simuler: ");
         int m = sc.nextInt();
         for (int i = 0; i < m; i++) {
             int tirage = generateurAleat.nextInt(6);
@@ -29,7 +29,8 @@ public class TP1_Stats_Quiles {
         }
         System.out.println("\nRésusltats des lancers :");
         for (int j = 0; j < tableau.length; j++) {
-            System.out.println("Face" + (j + 1) + ":" + tableau[j]);
+            double pourcentage =(tableau[j]*100.0)/m;
+            System.out.println("Face" + (j + 1) + ":" + tableau[j]+" donc le pourcentage pour la face "+ (j+1)+" ("+pourcentage+")");
         }
     }
 
