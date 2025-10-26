@@ -18,8 +18,9 @@ public class TP1_guessMyNumber_Quiles {
      */
     public static void main(String[] args) {
         Random generateurAleat = new Random();
-        int n = generateurAleat.nextInt(100);
         Scanner sc = new Scanner(System.in);
+        
+        int n = generateurAleat.nextInt(100);
         System.out.println("""
                        Choisit une difficult\u00e9 : 
                        1-facile 
@@ -27,6 +28,8 @@ public class TP1_guessMyNumber_Quiles {
                        3-difficile
                        4-cauchemar""");
         int dif = sc.nextInt();
+        
+        
         switch (dif) {
             case 1: {
                 System.out.println("Tu as autant de tentative que tu veux...");
@@ -49,6 +52,8 @@ public class TP1_guessMyNumber_Quiles {
                 System.out.println("Tentative=" + comp);
                 break;
             }
+            
+            
             case 2: {
                 System.out.println("tu as 5 tentatives");
                 System.out.println("Essaye...");
@@ -71,6 +76,8 @@ public class TP1_guessMyNumber_Quiles {
                 System.out.println("Perdu");
                 break;
             }
+            
+            
             case 3: {
                 System.out.println("Devine le nombre sachant que 1/4 les indices sont faux");
                 System.out.println("Essaye...");
@@ -102,6 +109,8 @@ public class TP1_guessMyNumber_Quiles {
                 System.out.println("Tentative=" + comp);
                 break;
             }
+            
+            
             case 4: {
                 System.out.println("Devine le nombre sachant que 1/2 les indices sont faux");
                 System.out.println("Essaye...");
