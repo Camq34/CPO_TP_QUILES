@@ -13,6 +13,7 @@ import java.util.Scanner;
  */
 public class TP1_Stats_Quiles {
 
+    
     /**
      * @param args the command line arguments
      */
