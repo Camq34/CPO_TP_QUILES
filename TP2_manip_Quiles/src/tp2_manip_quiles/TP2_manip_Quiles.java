@@ -22,7 +22,12 @@ public class TP2_manip_Quiles {
         
                 
         System.out.println("nb de calories de Assiette 2 : " + assiette2.nbCalories) ; 
-        System.out.println("nb de calories de Assiette 1 : " + assiette1.nbCalories) ; 
+        System.out.println("nb de calories de Assiette 1 : " + assiette1.nbCalories) ;
+        
+        Moussaka[] Miam = new Moussaka[10];
+        for (int i = 0; i < lenght.Miam ; i++) {
+            Miam[i] = new Moussaka();
+        }
     }
     
 }
