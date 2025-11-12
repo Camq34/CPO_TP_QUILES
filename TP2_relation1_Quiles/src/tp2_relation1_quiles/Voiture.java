@@ -12,17 +12,18 @@ public class Voiture {
      String modele;
     String marque;
     int nbPlaces;
-    Personne proprietaire; // référence vers le propriétaire
+    Personne proprietaire;
 
     // Constructeur
     public Voiture(String modele, String marque, int nbPlaces) {
         this.modele = modele;
         this.marque = marque;
         this.nbPlaces = nbPlaces;
-        this.proprietaire = null; // initialisation à null
+        this.proprietaire = null; 
     }
 
-    // toString
+   
+     @Override
     public String toString() {
         return marque + " " + modele + " (" + nbPlaces + " places)";
     }
