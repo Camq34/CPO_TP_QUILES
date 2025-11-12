@@ -9,7 +9,7 @@ package tp2_relation1_quiles;
  * @author camsq
  */
 public class Voiture {
-     String modele;
+    String modele;
     String marque;
     int nbPlaces;
     Personne proprietaire;
