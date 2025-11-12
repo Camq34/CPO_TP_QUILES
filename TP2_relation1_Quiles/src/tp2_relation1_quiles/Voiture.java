@@ -14,7 +14,6 @@ public class Voiture {
     int nbPlaces;
     Personne proprietaire;
 
-    // Constructeur
     public Voiture(String modele, String marque, int nbPlaces) {
         this.modele = modele;
         this.marque = marque;
