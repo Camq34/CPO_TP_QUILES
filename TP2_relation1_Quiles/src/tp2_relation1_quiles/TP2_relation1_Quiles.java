@@ -35,8 +35,8 @@ public class TP2_relation1_Quiles {
         reno.ajouter_voiture(une2008);
         reno.ajouter_voiture(uneMicra);
 
-        System.out.println("\n" + bob + " -> Première voiture : " + bob.liste_voitures[0]);
-        System.out.println(reno + " -> Première voiture : " + reno.liste_voitures[0]);
+        System.out.println("\n" + bob + " -> Premiere voiture : " + bob.liste_voitures[0]);
+        System.out.println(reno + " -> Premiere voiture : " + reno.liste_voitures[0]);
     
     }
     
