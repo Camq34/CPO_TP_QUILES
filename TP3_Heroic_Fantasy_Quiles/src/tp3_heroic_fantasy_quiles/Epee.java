@@ -24,4 +24,5 @@ public class Epee extends Arme{
     public String toString() {
         return super.toString() + " | Finesse : " + indiceFinesse;
     }
+    
 }
