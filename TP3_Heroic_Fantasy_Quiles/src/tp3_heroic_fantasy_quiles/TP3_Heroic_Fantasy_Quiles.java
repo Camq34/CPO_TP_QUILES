@@ -5,7 +5,7 @@
 package tp3_heroic_fantasy_quiles;
 import Armes.*;
 import java.util.ArrayList;
-
+import Personnage.*;
 /**
  *
  * @author camsq
@@ -17,24 +17,36 @@ public class TP3_Heroic_Fantasy_Quiles {
      */
     public static void main(String[] args) {
         
-        Epee excalibur = new Epee("Excalibur", 7, 5);
-        Epee durandal = new Epee("Durandal", 4, 7);
+        Epee e1 = new Epee("Excalibur", 7, 5);
+        Epee e2 = new Epee("Durandal", 4, 7);
+        Baton b1 = new Baton("Chêne", 4, 5);
+        Baton b2 = new Baton("Charme", 5, 6);
 
-        Baton chene = new Baton("Chêne", 4, 5);
-        Baton charme = new Baton("Charme", 5, 6);
+        ArrayList<Arme> armes = new ArrayList<>();
+        armes.add(e1);
+        armes.add(e2);
+        armes.add(b1);
+        armes.add(b2);
 
-        ArrayList<Arme> arsenal = new ArrayList<>();
+        System.out.println("=== Liste des armes ===");
+        for (int i = 0; i < armes.size(); i++) {
+            System.out.println(armes.get(i));
+        }
 
-        // Ajout des armes
-        arsenal.add(excalibur);
-        arsenal.add(durandal);
-        arsenal.add(chene);
-        arsenal.add(charme);
+        Magicien m1 = new Magicien("Gandalf", 65, true);
+        Magicien m2 = new Magicien("Garcimore", 44, false);
+        Guerrier g1 = new Guerrier("Conan", 78, false);
+        Guerrier g2 = new Guerrier("Lannister", 45, true);
 
-        // Affichage des caractéristiques des armes
-        for (int i = 0; i < arsenal.size(); i++) {
-            System.out.println(arsenal.get(i).toString());
+        ArrayList<Personnage> persos = new ArrayList<>();
+        persos.add(m1);
+        persos.add(m2);
+        persos.add(g1);
+        persos.add(g2);
+
+        System.out.println("\n=== Liste des personnages ===");
+        for (int i = 0; i < persos.size(); i++) {
+            System.out.println(persos.get(i));
+        }
     }
-    
-}
 }
