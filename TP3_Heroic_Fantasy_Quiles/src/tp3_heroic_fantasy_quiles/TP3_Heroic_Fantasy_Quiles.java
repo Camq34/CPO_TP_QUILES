@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package tp3_heroic_fantasy_quiles;
-
+import Armes.*;
 import java.util.ArrayList;
 
 /**
