@@ -5,26 +5,34 @@ import java.util.ArrayList;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author camsq
  */
 public class FenetreQuiz extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FenetreQuiz.class.getName());
     ArrayList<Question> questions = new ArrayList<>();
     private int indQC = 0;
-    private void afficherQuestionCourante(){
+    private int score = 0;
+
+    private void afficherQuestionCourante() {
         Question q = questions.get(indQC);
         Label_Question.setText(q.getinti());
-        
+
         btn_Rep1.setText(q.getp1());
         btn_Rep2.setText(q.getp2());
         btn_Rep3.setText(q.getp3());
         btn_Rep4.setText(q.getp4());
 
-    }
+        btn_Rep1.setEnabled(true);
+        btn_Rep2.setEnabled(true);
+        btn_Rep3.setEnabled(true);
+        btn_Rep4.setEnabled(true);
+
+        Label_Bien.setVisible(false);
+        Label_nul.setVisible(false);
+        btn_qsuivant.setVisible(false);
     }
 
     /**
@@ -32,23 +40,43 @@ public class FenetreQuiz extends javax.swing.JFrame {
      */
     public FenetreQuiz() {
         initComponents();
-        
 
-    questions.add(new Question("Quelle est la capitale de l’Italie ?","Rome", "Milan", "Venise", "Florence", 1));
-    questions.add(new Question("Quelle est la capitale du Canada ?","Toronto", "Ottawa", "Montréal", "Vancouver", 2));
-    questions.add(new Question("Quelle est la capitale du Japon ?","Kyoto", "Tokyo", "Osaka", "Nagoya", 2));
-    questions.add(new Question("Quelle est la capitale de l’Australie ?","Sydney", "Melbourne", "Canberra", "Brisbane", 3));
-    questions.add(new Question("Quelle est la capitale du Brésil ?","Rio de Janeiro", "São Paulo", "Brasília", "Salvador", 3));
-    questions.add(new Question("Quelle est la capitale de l’Espagne ?","Barcelone", "Madrid", "Séville", "Valence", 2));
-    questions.add(new Question("Quelle est la capitale de l’Allemagne ?","Berlin", "Munich", "Francfort", "Hambourg", 1));
-    questions.add(new Question("Quelle est la capitale de la Russie ?","Saint-Pétersbourg", "Moscou", "Novossibirsk", "Kazan", 2));
-    questions.add(new Question("Quelle est la capitale de l’Égypte ?","Alexandrie", "Le Caire", "Gizeh", "Louqsor", 2));
-    questions.add(new Question("Quelle est la capitale de la Chine ?","Shanghai", "Pékin", "Hong Kong", "Shenzhen", 2));
-    
-    
-    
+        questions.add(new Question("Quelle est la capitale de l’Italie ?", "Rome", "Milan", "Venise", "Florence", 1));
+        questions.add(new Question("Quelle est la capitale du Canada ?", "Toronto", "Ottawa", "Montréal", "Vancouver", 2));
+        questions.add(new Question("Quelle est la capitale du Japon ?", "Kyoto", "Tokyo", "Osaka", "Nagoya", 2));
+        questions.add(new Question("Quelle est la capitale de l’Australie ?", "Sydney", "Melbourne", "Canberra", "Brisbane", 3));
+        questions.add(new Question("Quelle est la capitale du Brésil ?", "Rio de Janeiro", "São Paulo", "Brasília", "Salvador", 3));
+        questions.add(new Question("Quelle est la capitale de l’Espagne ?", "Barcelone", "Madrid", "Séville", "Valence", 2));
+        questions.add(new Question("Quelle est la capitale de l’Allemagne ?", "Berlin", "Munich", "Francfort", "Hambourg", 1));
+        questions.add(new Question("Quelle est la capitale de la Russie ?", "Saint-Pétersbourg", "Moscou", "Novossibirsk", "Kazan", 2));
+        questions.add(new Question("Quelle est la capitale de l’Égypte ?", "Alexandrie", "Le Caire", "Gizeh", "Louqsor", 2));
+        questions.add(new Question("Quelle est la capitale de la Chine ?", "Shanghai", "Pékin", "Hong Kong", "Shenzhen", 2));
+
+        afficherQuestionCourante();
     }
 
+    private void verifRep(int numChoisi) {
+
+        Question q = questions.get(indQC);
+
+        if (numChoisi == q.getindBR()) {
+            Label_Bien.setVisible(true);
+            Label_nul.setVisible(false);
+
+            score++;
+            Label_score.setText("Score : " + score + "/10");
+        } else {
+            Label_Bien.setVisible(false);
+            Label_nul.setVisible(true);
+        }
+
+        btn_Rep1.setEnabled(false);
+        btn_Rep2.setEnabled(false);
+        btn_Rep3.setEnabled(false);
+        btn_Rep4.setEnabled(false);
+
+        btn_qsuivant.setVisible(true);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -120,59 +148,57 @@ public class FenetreQuiz extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(Label_score)
-                        .addGap(65, 65, 65)
-                        .addComponent(Label_nul)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_qsuivant))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
+                                .addGap(52, 52, 52)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btn_Rep1)
                                     .addComponent(btn_Rep3))
-                                .addGap(115, 115, 115)
+                                .addGap(104, 104, 104)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btn_Rep4)
                                     .addComponent(btn_Rep2)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(108, 108, 108)
-                                .addComponent(Label_Bien)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(122, 122, 122)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Label_nul)
+                                    .addComponent(Label_Bien)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addComponent(Label_Question, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 14, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(Label_Question)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(Label_Question)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(Label_Question, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Rep1)
                     .addComponent(btn_Rep2))
-                .addGap(47, 47, 47)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Rep3)
-                    .addComponent(btn_Rep4))
-                .addGap(38, 38, 38)
+                    .addComponent(btn_Rep4)
+                    .addComponent(btn_Rep3))
+                .addGap(18, 18, 18)
+                .addComponent(Label_Bien)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_qsuivant)
-                            .addComponent(Label_score, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(70, 70, 70)
+                        .addComponent(Label_score, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(Label_Bien)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Label_nul)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Label_nul)
+                        .addGap(36, 36, 36)
+                        .addComponent(btn_qsuivant)))
                 .addContainerGap())
         );
 
@@ -180,23 +206,32 @@ public class FenetreQuiz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_Rep3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Rep3ActionPerformed
-        // TODO add your handling code here:
+        VerifRep(3);
     }//GEN-LAST:event_btn_Rep3ActionPerformed
 
     private void btn_Rep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Rep1ActionPerformed
-        // TODO add your handling code here:
+        VerifRep(1);
     }//GEN-LAST:event_btn_Rep1ActionPerformed
 
     private void btn_Rep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Rep2ActionPerformed
-        // TODO add your handling code here:
+        VerifRep(2);
     }//GEN-LAST:event_btn_Rep2ActionPerformed
 
     private void btn_Rep4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Rep4ActionPerformed
-        // TODO add your handling code here:
+        VerifRep(4);
     }//GEN-LAST:event_btn_Rep4ActionPerformed
 
     private void btn_qsuivantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_qsuivantActionPerformed
-        // TODO add your handling code here:
+        indQC++;
+
+        if (indQC < 10) {
+
+            afficherQuestionCourante();
+        } else {
+            Label_score.setText("Quiz terminé. Score : " + score + " / 10");
+
+            btn_qsuivant.setEnabled(false);
+        }
     }//GEN-LAST:event_btn_qsuivantActionPerformed
 
     /**
@@ -235,5 +270,9 @@ public class FenetreQuiz extends javax.swing.JFrame {
     private javax.swing.JButton btn_Rep4;
     private javax.swing.JButton btn_qsuivant;
     // End of variables declaration//GEN-END:variables
+
+    private void VerifRep(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }
