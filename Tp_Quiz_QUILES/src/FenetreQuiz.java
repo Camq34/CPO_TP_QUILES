@@ -55,7 +55,7 @@ public class FenetreQuiz extends javax.swing.JFrame {
         afficherQuestionCourante();
     }
 
-    private void verifRep(int numChoisi) {
+    private void VerifRep(int numChoisi) {
 
         Question q = questions.get(indQC);
 
@@ -131,7 +131,7 @@ public class FenetreQuiz extends javax.swing.JFrame {
 
         Label_Bien.setText("Bonne reponse ma star");
 
-        btn_qsuivant.setText("jButton1");
+        btn_qsuivant.setText("Question Suivante ");
         btn_qsuivant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_qsuivantActionPerformed(evt);
@@ -270,9 +270,5 @@ public class FenetreQuiz extends javax.swing.JFrame {
     private javax.swing.JButton btn_Rep4;
     private javax.swing.JButton btn_qsuivant;
     // End of variables declaration//GEN-END:variables
-
-    private void VerifRep(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
 }
