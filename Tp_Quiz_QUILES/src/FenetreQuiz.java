@@ -14,33 +14,41 @@ public class FenetreQuiz extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FenetreQuiz.class.getName());
     ArrayList<Question> questions = new ArrayList<>();
+    private int indQC = 0;
+    private void afficherQuestionCourante(){
+        Question q = questions.get(indQC);
+        Label_Question.setText(q.getinti());
+        
+        btn_Rep1.setText(q.getp1());
+        btn_Rep2.setText(q.getp2());
+        btn_Rep3.setText(q.getp3());
+        btn_Rep4.setText(q.getp4());
+
+    }
+    }
+
     /**
-     * Creates new form FenetreQuiz
+     ** Creates new form FenetreQuiz
      */
     public FenetreQuiz() {
         initComponents();
         
 
     questions.add(new Question("Quelle est la capitale de l’Italie ?","Rome", "Milan", "Venise", "Florence", 1));
-
     questions.add(new Question("Quelle est la capitale du Canada ?","Toronto", "Ottawa", "Montréal", "Vancouver", 2));
-
     questions.add(new Question("Quelle est la capitale du Japon ?","Kyoto", "Tokyo", "Osaka", "Nagoya", 2));
-
     questions.add(new Question("Quelle est la capitale de l’Australie ?","Sydney", "Melbourne", "Canberra", "Brisbane", 3));
-
     questions.add(new Question("Quelle est la capitale du Brésil ?","Rio de Janeiro", "São Paulo", "Brasília", "Salvador", 3));
-
     questions.add(new Question("Quelle est la capitale de l’Espagne ?","Barcelone", "Madrid", "Séville", "Valence", 2));
-
     questions.add(new Question("Quelle est la capitale de l’Allemagne ?","Berlin", "Munich", "Francfort", "Hambourg", 1));
-
     questions.add(new Question("Quelle est la capitale de la Russie ?","Saint-Pétersbourg", "Moscou", "Novossibirsk", "Kazan", 2));
-
     questions.add(new Question("Quelle est la capitale de l’Égypte ?","Alexandrie", "Le Caire", "Gizeh", "Louqsor", 2));
-
     questions.add(new Question("Quelle est la capitale de la Chine ?","Shanghai", "Pékin", "Hong Kong", "Shenzhen", 2));
+    
+    
+    
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,16 +74,41 @@ public class FenetreQuiz extends javax.swing.JFrame {
         Label_Question.setText("Question");
 
         btn_Rep1.setText("Bouton1");
+        btn_Rep1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Rep1ActionPerformed(evt);
+            }
+        });
 
         btn_Rep2.setText("Bouton2");
+        btn_Rep2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Rep2ActionPerformed(evt);
+            }
+        });
 
         btn_Rep3.setText("Bouton3");
+        btn_Rep3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Rep3ActionPerformed(evt);
+            }
+        });
 
         btn_Rep4.setText("Bouton4");
+        btn_Rep4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Rep4ActionPerformed(evt);
+            }
+        });
 
         Label_Bien.setText("Bonne reponse ma star");
 
         btn_qsuivant.setText("jButton1");
+        btn_qsuivant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_qsuivantActionPerformed(evt);
+            }
+        });
 
         Label_nul.setText("Mauvaise reponse t'es nul");
 
@@ -107,19 +140,20 @@ public class FenetreQuiz extends javax.swing.JFrame {
                                     .addComponent(btn_Rep2)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(108, 108, 108)
-                                .addComponent(Label_Bien))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(156, 156, 156)
-                                .addComponent(Label_Question)))
+                                .addComponent(Label_Bien)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(148, 148, 148)
+                .addComponent(Label_Question)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(47, 47, 47)
                 .addComponent(Label_Question)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Rep1)
                     .addComponent(btn_Rep2))
@@ -144,6 +178,26 @@ public class FenetreQuiz extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_Rep3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Rep3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Rep3ActionPerformed
+
+    private void btn_Rep1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Rep1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Rep1ActionPerformed
+
+    private void btn_Rep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Rep2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Rep2ActionPerformed
+
+    private void btn_Rep4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Rep4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_Rep4ActionPerformed
+
+    private void btn_qsuivantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_qsuivantActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_qsuivantActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,4 +235,5 @@ public class FenetreQuiz extends javax.swing.JFrame {
     private javax.swing.JButton btn_Rep4;
     private javax.swing.JButton btn_qsuivant;
     // End of variables declaration//GEN-END:variables
+
 }
