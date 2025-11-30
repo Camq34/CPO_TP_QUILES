@@ -25,9 +25,9 @@ public class Magicien extends Personnage {
     public void attaquer(Personnage cible) {
         if (armeEnMain == null) return;
 
-        int degats = armeEnMain.getNiveauAttaque();
+        int degats = armeEnMain.Getniv();
 
-        if (armeEnMain instanceof armes.Baton b)
+        if (armeEnMain instanceof Armes.Baton b)
             degats *= b.getAge();
 
         if (confirme) degats /= 2;

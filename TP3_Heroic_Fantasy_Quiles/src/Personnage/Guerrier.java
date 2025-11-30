@@ -24,7 +24,7 @@ public class Guerrier extends Personnage {
     public void attaquer(Personnage cible) {
         if (armeEnMain == null) return;
 
-        int degats = armeEnMain.getNiveauAttaque();
+        int degats = armeEnMain.Getniv();
 
         if (armeEnMain instanceof Armes.Epee e)
             degats *= e.getfinesse();

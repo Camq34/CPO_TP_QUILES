@@ -32,7 +32,7 @@ public class TP3_Heroic_Fantasy_Quiles {
         gur.ajouterArme(durandal);
         gur.ajouterArme(charme);
 
-        mag.equiper("Chêne");
+        mag.equiper("Chene");
         gur.equiper("Durandal");
 
         System.out.println("\n=== Combat ===");

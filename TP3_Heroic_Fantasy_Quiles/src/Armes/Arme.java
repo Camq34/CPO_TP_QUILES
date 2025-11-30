@@ -27,7 +27,7 @@ public class Arme {
     }
      @Override
     public String toString() {
-        return "Arme : " + nom + " | Niveau d’attaque : " + niv;
+        return "\n "+ nom + " Niveau : " + niv;
     }
     
 }
