@@ -16,37 +16,34 @@ public class TP3_Heroic_Fantasy_Quiles {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        Epee e1 = new Epee("Excalibur", 7, 5);
-        Epee e2 = new Epee("Durandal", 4, 7);
-        Baton b1 = new Baton("Chêne", 4, 5);
-        Baton b2 = new Baton("Charme", 5, 6);
 
-        ArrayList<Arme> armes = new ArrayList<>();
-        armes.add(e1);
-        armes.add(e2);
-        armes.add(b1);
-        armes.add(b2);
+        Epee excalibur = new Epee("Excalibur", 7, 5);
+        Epee durandal = new Epee("Durandal", 4, 7);
 
-        System.out.println("=== Liste des armes ===");
-        for (int i = 0; i < armes.size(); i++) {
-            System.out.println(armes.get(i));
-        }
+        Baton chene = new Baton("Chêne", 4, 5);
+        Baton charme = new Baton("Charme", 5, 6);
 
-        Magicien m1 = new Magicien("Gandalf", 65, true);
-        Magicien m2 = new Magicien("Garcimore", 44, false);
-        Guerrier g1 = new Guerrier("Conan", 78, false);
-        Guerrier g2 = new Guerrier("Lannister", 45, true);
+        Magicien mag = new Magicien("Merlin", 60, false);
+        Guerrier gur = new Guerrier("Conan", 80, true);
 
-        ArrayList<Personnage> persos = new ArrayList<>();
-        persos.add(m1);
-        persos.add(m2);
-        persos.add(g1);
-        persos.add(g2);
+        mag.ajouterArme(excalibur);
+        mag.ajouterArme(chene);
 
-        System.out.println("\n=== Liste des personnages ===");
-        for (int i = 0; i < persos.size(); i++) {
-            System.out.println(persos.get(i));
-        }
+        gur.ajouterArme(durandal);
+        gur.ajouterArme(charme);
+
+        mag.equiper("Chêne");
+        gur.equiper("Durandal");
+
+        System.out.println("\n=== Combat ===");
+        mag.attaquer(gur);
+        System.out.println(mag);
+        System.out.println(gur);
+
+        gur.attaquer(mag);
+        System.out.println(mag);
+        System.out.println(gur);
+
+        System.out.println("\nVivant ? Magicien: " + mag.estVivant() + ", Guerrier: " + gur.estVivant());
     }
 }

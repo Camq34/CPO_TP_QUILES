@@ -16,7 +16,9 @@ public class Baton extends Arme {
         super(nom, niv);
         this.age = age;
     }
-
+    public int getAge() {
+        return age; 
+    }
     @Override
     public String toString() {
         return "Bâton : " + nom + " | Attaque = " + niv + " | Âge = " + age;

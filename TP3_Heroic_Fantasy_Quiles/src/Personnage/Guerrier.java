@@ -9,20 +9,29 @@ package Personnage;
  * @author camsq
  */
 public class Guerrier extends Personnage {
-    private boolean cheval;
+    private boolean aCheval;
 
-    public Guerrier(String nom, int nivVie, boolean cheval) {
-        super(nom, nivVie);
-        this.cheval = cheval;
+    public Guerrier(String nom, int vie, boolean cheval) {
+        super(nom, vie);
+        this.aCheval = cheval;
+        nbGuerriers++;
     }
 
-    public void setCheval(boolean cheval) {
-        this.cheval = cheval;
+    public void setACheval(boolean c) { 
+        this.aCheval = c; 
     }
 
-    @Override
-    public String toString() {
-        return "Guerrier : " + nom + " | Vie = " + nivVie +
-               " | À cheval = " + cheval;
+    public void attaquer(Personnage cible) {
+        if (armeEnMain == null) return;
+
+        int degats = armeEnMain.getNiveauAttaque();
+
+        if (armeEnMain instanceof Armes.Epee e)
+            degats *= e.getfinesse();
+
+        if (aCheval) degats /= 2;
+
+        cible.estAttaque(degats);
+        this.seFatiguer();
     }
 }
