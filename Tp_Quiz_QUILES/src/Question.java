@@ -13,7 +13,8 @@ public class Question {
     private String prop2;
     private String prop3; 
     private String prop4; 
-    private int iBR; 
+    private int iBR;
+    
     
     public Question(String inti, String p1, String p2, String p3, String p4, int indBR) {
         this.intitule=inti;
