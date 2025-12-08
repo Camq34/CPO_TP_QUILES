@@ -81,37 +81,49 @@ Cadena_code jeu;
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         texte_intro.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        texte_intro.setForeground(new java.awt.Color(153, 0, 153));
         texte_intro.setText("Trouvez le bon code :");
-        getContentPane().add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        getContentPane().add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 30));
 
         texte_lbl_nb_chiffres_excats.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        texte_lbl_nb_chiffres_excats.setForeground(new java.awt.Color(153, 0, 153));
         texte_lbl_nb_chiffres_excats.setText("Nombre de chiffres exacts : ");
         getContentPane().add(texte_lbl_nb_chiffres_excats, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, 20));
 
+        texte_nb_chiffres_exacts.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        texte_nb_chiffres_exacts.setForeground(new java.awt.Color(255, 0, 0));
         texte_nb_chiffres_exacts.setText("NBR exact");
         getContentPane().add(texte_nb_chiffres_exacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 70, -1));
 
         texte_lbl_nb_chiffres_haut.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        texte_lbl_nb_chiffres_haut.setForeground(new java.awt.Color(153, 0, 153));
         texte_lbl_nb_chiffres_haut.setText("Nombre de chiffres trop hauts : ");
         getContentPane().add(texte_lbl_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, 21));
 
+        texte_nb_chiffres_haut.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        texte_nb_chiffres_haut.setForeground(new java.awt.Color(255, 0, 0));
         texte_nb_chiffres_haut.setText("NBR hauts");
         getContentPane().add(texte_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
 
         texte_lbl_nb_chiffres_bas.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        texte_lbl_nb_chiffres_bas.setForeground(new java.awt.Color(153, 0, 153));
         texte_lbl_nb_chiffres_bas.setText("Nombre de chiffres trop bas :");
         getContentPane().add(texte_lbl_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
+        texte_nb_chiffres_bas.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        texte_nb_chiffres_bas.setForeground(new java.awt.Color(255, 0, 0));
         texte_nb_chiffres_bas.setText("NBR bas");
-        getContentPane().add(texte_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 50, 20));
+        getContentPane().add(texte_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 60, 20));
 
         texte_score.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
+        texte_score.setForeground(new java.awt.Color(153, 0, 153));
         texte_score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         texte_score.setText("0 sur 10");
         texte_score.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(texte_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 80, 40));
 
         texte_tentatives.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        texte_tentatives.setForeground(new java.awt.Color(153, 0, 153));
         texte_tentatives.setText("Tentatives :");
         getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
 
