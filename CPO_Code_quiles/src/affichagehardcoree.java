@@ -27,10 +27,7 @@ Cadena_code jeu;
     }
 
     private void maj_Chiffre(javax.swing.JLabel label, boolean increment) {
-         if (jeu.estPartieTerminee()) {
-            return;
-        }
-       
+        
         try {
             int chiffre = Integer.parseInt(label.getText());
             if (increment) {
@@ -204,6 +201,11 @@ Cadena_code jeu;
                         up_chiffre_5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
                         up_chiffre_5.setText("/\\");
                             up_chiffre_5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
+                            up_chiffre_5.addActionListener(new java.awt.event.ActionListener() {
+                                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                    up_chiffre_5ActionPerformed(evt);
+                                }
+                            });
                             jPanel1.add(up_chiffre_5);
 
                             texte_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -284,6 +286,11 @@ Cadena_code jeu;
                             down_chiffre_5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
                             down_chiffre_5.setText("\\/");
                             down_chiffre_5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
+                            down_chiffre_5.addActionListener(new java.awt.event.ActionListener() {
+                                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                    down_chiffre_5ActionPerformed(evt);
+                                }
+                            });
                             jPanel1.add(down_chiffre_5);
 
                             getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 540, 190));
@@ -376,6 +383,14 @@ Cadena_code jeu;
 
         bouton_tester.setEnabled(true);
     }//GEN-LAST:event_bouton_recommencerActionPerformed
+
+    private void up_chiffre_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_5ActionPerformed
+        maj_Chiffre(texte_chiffre, true);
+    }//GEN-LAST:event_up_chiffre_5ActionPerformed
+
+    private void down_chiffre_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_5ActionPerformed
+        maj_Chiffre(texte_chiffre, false);
+    }//GEN-LAST:event_down_chiffre_5ActionPerformed
 
     /**
      * @param args the command line arguments

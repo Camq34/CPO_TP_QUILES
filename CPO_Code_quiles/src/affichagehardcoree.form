@@ -352,6 +352,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="up_chiffre_5ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="texte_chiffre_1">
           <Properties>
@@ -529,6 +532,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="down_chiffre_5ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

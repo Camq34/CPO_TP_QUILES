@@ -21,14 +21,12 @@ Cadena_code jeu;
      */
     public affichagejeu(int n,int lc) {
         initComponents();
-        jeu = new Cadena_code(n,4);
+        jeu = new Cadena_code(n,lc);
         texte_score.setText(jeu.getTentativesEffectuees() + " sur " + jeu.getMaxTentatives());
         texte_intro.setText("Trouvez le bon code en moins de " + jeu.getMaxTentatives() + " tentatives !");
     }
 
-    affichagejeu(int n, int lc) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 
     private void maj_Chiffre(javax.swing.JLabel label, boolean increment) {
          if (jeu.estPartieTerminee()) {

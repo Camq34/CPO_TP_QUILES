@@ -70,6 +70,7 @@ public class Cadena_code  {
     }
    
     public boolean estPartieTerminee() {
+        System.out.println(tentativesRestantes <= 0);
         return estGagne || tentativesRestantes <= 0;
     }
    
