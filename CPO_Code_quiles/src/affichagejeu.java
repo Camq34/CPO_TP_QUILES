@@ -278,7 +278,7 @@ Cadena_code jeu;
 
     private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
         if (jeu.estPartieTerminee()) {
-            return;
+           // return;
         }
 
         int[] essai = new int[4];
