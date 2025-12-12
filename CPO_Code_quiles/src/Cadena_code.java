@@ -10,15 +10,16 @@
 import java.util.Random;
 public class Cadena_code  {
     
-    private static final int LONGUEUR_CODE = 4;
+    
     private static final int MIN_CHIFFRE = 0;
     private static final int MAX_CHIFFRE = 9;
    
     private int[] codeSecret;
     private int tentativesRestantes;
     private boolean estGagne;
-   
-    public Cadena_code() {
+    private int n;
+    private int lc;
+    public Cadena_code(int n, int par) {
         démarrerJeu();
     }
    
@@ -30,8 +31,8 @@ public class Cadena_code  {
    
     private int[] générerCodeSecret() {
         Random rand = new Random();
-        int[] code = new int[LONGUEUR_CODE];
-        for (int i = 0; i < LONGUEUR_CODE; i++) {
+        int[] code = new int[lc];
+        for (int i = 0; i < lc; i++) {
             code[i] = rand.nextInt(MAX_CHIFFRE - MIN_CHIFFRE + 1) + MIN_CHIFFRE;
         }
         return code;
@@ -39,8 +40,8 @@ public class Cadena_code  {
    
     public int[] testerCombinaison(int[] essai) throws IllegalArgumentException {
         // Validation basique
-        if (essai == null || essai.length != LONGUEUR_CODE) {
-            throw new IllegalArgumentException("L'essai doit être un tableau de " + LONGUEUR_CODE + " chiffres.");
+        if (essai == null || essai.length != lc) {
+            throw new IllegalArgumentException("L'essai doit être un tableau de " + lc + " chiffres.");
         }
        
         if (estPartieTerminee() && !estGagne) {
@@ -51,7 +52,7 @@ public class Cadena_code  {
         int tropHauts = 0;
         int tropBas = 0;
 
-        for (int i = 0; i < LONGUEUR_CODE; i++) {
+        for (int i = 0; i < lc; i++) {
             if (essai[i] == codeSecret[i]) {
                 exacts++;
             } else if (essai[i] > codeSecret[i]) {
@@ -61,7 +62,7 @@ public class Cadena_code  {
             }
         }
         tentativesRestantes--;
-        if (exacts == LONGUEUR_CODE) {
+        if (exacts == lc) {
             estGagne = true;
         }
        
@@ -73,11 +74,11 @@ public class Cadena_code  {
     }
    
     public int getTentativesEffectuees() {
-        return MAX_TENTATIVES - tentativesRestantes;
+        return n - tentativesRestantes;
     }
    
     public int getMaxTentatives() {
-        return MAX_TENTATIVES;
+        return n;
     }
 
     public boolean estGagne() {

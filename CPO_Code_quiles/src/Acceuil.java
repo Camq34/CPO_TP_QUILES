@@ -37,7 +37,9 @@ public class Acceuil extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Button_facile.setBackground(new java.awt.Color(204, 204, 204));
         Button_facile.setText("Facile");
+        Button_facile.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
         Button_facile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_facileActionPerformed(evt);
@@ -52,14 +54,18 @@ public class Acceuil extends javax.swing.JFrame {
 
         texte_Hardcore.setText("-hardcore : 5 chiffre, avec 5 tentatives ");
 
+        Button_difficile.setBackground(new java.awt.Color(204, 204, 204));
         Button_difficile.setText("Difficile");
+        Button_difficile.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
         Button_difficile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_difficileActionPerformed(evt);
             }
         });
 
+        Button_Hardcore.setBackground(new java.awt.Color(204, 204, 204));
         Button_Hardcore.setText("Hardcore ");
+        Button_Hardcore.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
         Button_Hardcore.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_HardcoreActionPerformed(evt);
@@ -119,19 +125,21 @@ public class Acceuil extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Button_facileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_facileActionPerformed
-        affichagejeu i = new affichagejeu(10);
+        affichagejeu i = new affichagejeu(10,4);
         i.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Button_facileActionPerformed
 
     private void Button_difficileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_difficileActionPerformed
-        affichagejeu i = new affichagejeu(5);
+        affichagejeu i = new affichagejeu(5,4);
         i.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Button_difficileActionPerformed
 
     private void Button_HardcoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_HardcoreActionPerformed
-        // TODO add your handling code here:
+        affichagehardcoree i = new affichagehardcoree(5,5);
+        i.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_Button_HardcoreActionPerformed
 
     /**
