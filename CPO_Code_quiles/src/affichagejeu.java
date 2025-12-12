@@ -18,9 +18,9 @@ Cadena_code jeu;
     /**
      * Creates new form affichagejeu
      */
-    public affichagejeu() {
+    public affichagejeu(int n) {
         initComponents();
-        jeu = new Cadena_code();
+        jeu = new Cadena_code(n);
         texte_score.setText(jeu.getTentativesEffectuees() + " sur " + jeu.getMaxTentatives());
         texte_intro.setText("Trouvez le bon code en moins de " + jeu.getMaxTentatives() + " tentatives !");
     }
@@ -78,42 +78,43 @@ Cadena_code jeu;
         down_chiffre_4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 204, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         texte_intro.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         texte_intro.setForeground(new java.awt.Color(153, 0, 153));
         texte_intro.setText("Trouvez le bon code :");
-        getContentPane().add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 30));
+        getContentPane().add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 190, 30));
 
         texte_lbl_nb_chiffres_excats.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         texte_lbl_nb_chiffres_excats.setForeground(new java.awt.Color(153, 0, 153));
         texte_lbl_nb_chiffres_excats.setText("Nombre de chiffres exacts : ");
-        getContentPane().add(texte_lbl_nb_chiffres_excats, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, 20));
+        getContentPane().add(texte_lbl_nb_chiffres_excats, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, 20));
 
         texte_nb_chiffres_exacts.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         texte_nb_chiffres_exacts.setForeground(new java.awt.Color(255, 0, 0));
         texte_nb_chiffres_exacts.setText("NBR exact");
-        getContentPane().add(texte_nb_chiffres_exacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 70, -1));
+        getContentPane().add(texte_nb_chiffres_exacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 70, -1));
 
         texte_lbl_nb_chiffres_haut.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         texte_lbl_nb_chiffres_haut.setForeground(new java.awt.Color(153, 0, 153));
         texte_lbl_nb_chiffres_haut.setText("Nombre de chiffres trop hauts : ");
-        getContentPane().add(texte_lbl_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, 21));
+        getContentPane().add(texte_lbl_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, 21));
 
         texte_nb_chiffres_haut.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         texte_nb_chiffres_haut.setForeground(new java.awt.Color(255, 0, 0));
         texte_nb_chiffres_haut.setText("NBR hauts");
-        getContentPane().add(texte_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
+        getContentPane().add(texte_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, -1, -1));
 
         texte_lbl_nb_chiffres_bas.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         texte_lbl_nb_chiffres_bas.setForeground(new java.awt.Color(153, 0, 153));
         texte_lbl_nb_chiffres_bas.setText("Nombre de chiffres trop bas :");
-        getContentPane().add(texte_lbl_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+        getContentPane().add(texte_lbl_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
         texte_nb_chiffres_bas.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         texte_nb_chiffres_bas.setForeground(new java.awt.Color(255, 0, 0));
         texte_nb_chiffres_bas.setText("NBR bas");
-        getContentPane().add(texte_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 60, 20));
+        getContentPane().add(texte_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 60, 20));
 
         texte_score.setFont(new java.awt.Font("Trebuchet MS", 3, 18)); // NOI18N
         texte_score.setForeground(new java.awt.Color(153, 0, 153));
@@ -125,30 +126,36 @@ Cadena_code jeu;
         texte_tentatives.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         texte_tentatives.setForeground(new java.awt.Color(153, 0, 153));
         texte_tentatives.setText("Tentatives :");
-        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
+        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
 
         bouton_recommencer.setBackground(new java.awt.Color(204, 204, 204));
+        bouton_recommencer.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         bouton_recommencer.setText("Recommencer");
+        bouton_recommencer.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
         bouton_recommencer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bouton_recommencerActionPerformed(evt);
             }
         });
-        getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, -1, -1));
+        getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 353, 160, 40));
 
         bouton_tester.setBackground(new java.awt.Color(204, 204, 204));
+        bouton_tester.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         bouton_tester.setText("Tester");
+        bouton_tester.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
         bouton_tester.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bouton_testerActionPerformed(evt);
             }
         });
-        getContentPane().add(bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, -1, -1));
+        getContentPane().add(bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 180, -1, -1));
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 4, 40, 20));
 
         up_chiffre_1.setBackground(new java.awt.Color(204, 204, 204));
+        up_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         up_chiffre_1.setText("/\\");
+            up_chiffre_1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153)));
             up_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     up_chiffre_1ActionPerformed(evt);
@@ -157,7 +164,9 @@ Cadena_code jeu;
             jPanel1.add(up_chiffre_1);
 
             up_chiffre_2.setBackground(new java.awt.Color(204, 204, 204));
+            up_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
             up_chiffre_2.setText("/\\");
+                up_chiffre_2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153)));
                 up_chiffre_2.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         up_chiffre_2ActionPerformed(evt);
@@ -166,7 +175,9 @@ Cadena_code jeu;
                 jPanel1.add(up_chiffre_2);
 
                 up_chiffre_3.setBackground(new java.awt.Color(204, 204, 204));
+                up_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
                 up_chiffre_3.setText("/\\");
+                    up_chiffre_3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
                     up_chiffre_3.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                             up_chiffre_3ActionPerformed(evt);
@@ -175,7 +186,9 @@ Cadena_code jeu;
                     jPanel1.add(up_chiffre_3);
 
                     up_chiffre_4.setBackground(new java.awt.Color(204, 204, 204));
+                    up_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
                     up_chiffre_4.setText("/\\");
+                        up_chiffre_4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
                         up_chiffre_4.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 up_chiffre_4ActionPerformed(evt);
@@ -183,32 +196,34 @@ Cadena_code jeu;
                         });
                         jPanel1.add(up_chiffre_4);
 
-                        texte_chiffre_1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+                        texte_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
                         texte_chiffre_1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         texte_chiffre_1.setText("0");
-                        texte_chiffre_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+                        texte_chiffre_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
                         jPanel1.add(texte_chiffre_1);
 
-                        texte_chiffre_2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+                        texte_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
                         texte_chiffre_2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         texte_chiffre_2.setText("0");
-                        texte_chiffre_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+                        texte_chiffre_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
                         jPanel1.add(texte_chiffre_2);
 
-                        texte_chiffre_3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+                        texte_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
                         texte_chiffre_3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         texte_chiffre_3.setText("0");
-                        texte_chiffre_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+                        texte_chiffre_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
                         jPanel1.add(texte_chiffre_3);
 
-                        texte_chiffre_4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+                        texte_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
                         texte_chiffre_4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                         texte_chiffre_4.setText("0");
-                        texte_chiffre_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+                        texte_chiffre_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
                         jPanel1.add(texte_chiffre_4);
 
                         down_chiffre_1.setBackground(new java.awt.Color(204, 204, 204));
+                        down_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
                         down_chiffre_1.setText("\\/");
+                        down_chiffre_1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
                         down_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 down_chiffre_1ActionPerformed(evt);
@@ -217,7 +232,9 @@ Cadena_code jeu;
                         jPanel1.add(down_chiffre_1);
 
                         down_chiffre_2.setBackground(new java.awt.Color(204, 204, 204));
+                        down_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
                         down_chiffre_2.setText("\\/");
+                        down_chiffre_2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
                         down_chiffre_2.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 down_chiffre_2ActionPerformed(evt);
@@ -226,7 +243,9 @@ Cadena_code jeu;
                         jPanel1.add(down_chiffre_2);
 
                         down_chiffre_3.setBackground(new java.awt.Color(204, 204, 204));
+                        down_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
                         down_chiffre_3.setText("\\/");
+                        down_chiffre_3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
                         down_chiffre_3.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 down_chiffre_3ActionPerformed(evt);
@@ -235,7 +254,9 @@ Cadena_code jeu;
                         jPanel1.add(down_chiffre_3);
 
                         down_chiffre_4.setBackground(new java.awt.Color(204, 204, 204));
+                        down_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
                         down_chiffre_4.setText("\\/");
+                        down_chiffre_4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, java.awt.Color.gray, java.awt.Color.gray));
                         down_chiffre_4.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 down_chiffre_4ActionPerformed(evt);
@@ -243,7 +264,7 @@ Cadena_code jeu;
                         });
                         jPanel1.add(down_chiffre_4);
 
-                        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 410, 140));
+                        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 470, 190));
 
                         pack();
                     }// </editor-fold>//GEN-END:initComponents

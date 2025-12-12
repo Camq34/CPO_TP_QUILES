@@ -8,10 +8,9 @@
  * @author camsq
  */
 import java.util.Random;
-public class Cadena_code {
+public class Cadena_code  {
     
     private static final int LONGUEUR_CODE = 4;
-    private static final int MAX_TENTATIVES = 10;
     private static final int MIN_CHIFFRE = 0;
     private static final int MAX_CHIFFRE = 9;
    
@@ -25,7 +24,7 @@ public class Cadena_code {
    
     public final void démarrerJeu() {
         codeSecret = générerCodeSecret();
-        tentativesRestantes = MAX_TENTATIVES;
+        tentativesRestantes = n;
         estGagne = false;
     }
    
