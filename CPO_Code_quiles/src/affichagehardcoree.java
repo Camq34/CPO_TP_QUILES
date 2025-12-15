@@ -21,7 +21,7 @@ Cadena_code jeu;
      */
     public affichagehardcoree(int n, int par1) {
         initComponents();
-        jeu = new Cadena_code(n, 4);
+        jeu = new Cadena_code(n, par1);
         texte_score.setText(jeu.getTentativesEffectuees() + " sur " + jeu.getMaxTentatives());
         texte_intro.setText("Trouvez le bon code en moins de " + jeu.getMaxTentatives() + " tentatives !");
     }
@@ -374,6 +374,7 @@ Cadena_code jeu;
         texte_chiffre_2.setText("0");
         texte_chiffre_3.setText("0");
         texte_chiffre_4.setText("0");
+        texte_chiffre.setText("0");
 
         texte_nb_chiffres_exacts.setText("0");
         texte_nb_chiffres_haut.setText("0");

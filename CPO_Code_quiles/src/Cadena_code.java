@@ -20,6 +20,8 @@ public class Cadena_code  {
     private int n;
     private int lc;
     public Cadena_code(int n, int par) {
+        this.n = n;
+        this.lc = par;
         démarrerJeu();
     }
    
