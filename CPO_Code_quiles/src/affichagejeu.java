@@ -280,6 +280,8 @@ Cadena_code jeu;
         if (jeu.estPartieTerminee()) {
            // return;
         }
+        
+        
 
         int[] essai = new int[4];
         try {
